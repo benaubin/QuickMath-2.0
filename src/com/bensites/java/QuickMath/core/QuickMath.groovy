@@ -9,7 +9,7 @@ class QuickMath {
 		println("Welcome to QuickMath 2.0!")
 		println("Registering operators")
 		RegisterCore.register()
-		if(args.length != 0D)
+		if(args.length != 0)
 			run(args)
 		else {
 			Scanner input = new Scanner(System.in)
