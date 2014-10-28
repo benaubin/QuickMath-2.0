@@ -1,0 +1,62 @@
+package com.bensites.java.QuickMath.core
+import java.util.ArrayList
+import com.bensites.java.QuickMath.core.Operators.*
+
+class QuickMath {
+	public static OperatorRegistry registry = new OperatorRegistry()
+	public static void main(String[] args) {
+		println("Welcome to QuickMath 2.0!")
+		println("Registering operators")
+		RegisterCore.register()
+		if(args.length != 0D)
+			run(args)
+		else {
+			Scanner input = new Scanner(System.in)
+			while(true) {
+				println()
+				println("------------------------")
+				print("EasyCalc> ")
+				String argsRaw = input.nextLine()
+				if(argsRaw != "hacked") {
+					String temp = "";
+					ArrayList<String> paramsLocal = new ArrayList<String>()
+					for (char c : argsRaw.toCharArray()) {
+						if(c == ' ') {
+							paramsLocal.add(temp)
+							temp = ""
+						} else 
+							temp = temp + c
+					}
+					paramsLocal.add(temp)
+					try {
+						run(paramsLocal.toArray())
+						println()
+					} catch(e) {
+						println("Please enter a valid expression")
+					}
+				} else {
+					break;
+				}
+			}
+		}
+	}
+	public static ArrayList<String> toArray(Object[] args){
+		ArrayList<String> argsList = new ArrayList<String>()
+		for(String argument : args)
+			argsList.add(argument)
+		return argsList
+	}
+	public static run(Object[] args){
+		ArrayList<String> paramslocal = toArray(args)
+		paramslocal.get(1)
+		println()
+		println("Now Running:")
+		for (String arg : args)
+			print(arg + " ")
+		println()
+		println()
+		println("The answer is:")
+		Operator operation = registry.getFromString(paramslocal.get(1))
+		print(operation.doOperation(paramslocal))
+	}
+}
