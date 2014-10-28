@@ -1,12 +1,14 @@
 package com.bensites.java.QuickMath.core
 import java.util.ArrayList
 
+import com.bensites.java.QuickMath.core.GUI.MainGui
 import com.bensites.java.QuickMath.core.Operators.*
 
 class QuickMath {
 	public static OperatorRegistry registry = new OperatorRegistry()
 	public static void main(String[] args) {
 		println("Welcome to QuickMath 2.0!")
+		new MainGui();
 		println("Registering operators")
 		RegisterCore.register()
 		if(args.length != 0)
