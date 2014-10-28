@@ -1,5 +1,6 @@
 package com.bensites.java.QuickMath.core
 import java.util.ArrayList
+
 import com.bensites.java.QuickMath.core.Operators.*
 
 class QuickMath {
@@ -17,7 +18,7 @@ class QuickMath {
 				println("------------------------")
 				print("EasyCalc> ")
 				String argsRaw = input.nextLine()
-				if(argsRaw != "hacked") {
+				if(argsRaw != "42") {
 					String temp = "";
 					ArrayList<String> paramsLocal = new ArrayList<String>()
 					for (char c : argsRaw.toCharArray()) {
@@ -35,7 +36,11 @@ class QuickMath {
 						println("Please enter a valid expression")
 					}
 				} else {
-					break;
+					println("Congrats! You hacked life!")
+					while(true) {
+						print(InetAddress.getLocalHost().getHostName() + ":~ " + System.getProperty("user.name") + "\$ ")
+						try{Runtime.getRuntime().exec(input.nextLine())} catch(java.lang.IllegalArgumentException e){}
+					}
 				}
 			}
 		}
