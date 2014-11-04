@@ -3,7 +3,7 @@ package com.bensites.java.QuickMath.core
 import java.util.ArrayList
 import java.lang.Runtime
 
-import com.bensites.java.QuickMath.core.Operators.*
+import com.bensites.java.QuickMath.core.Operators.RegisterCore
 
 class QuickMath {
 	public static OperatorRegistry registry = new OperatorRegistry()
@@ -41,7 +41,9 @@ class QuickMath {
 					println("Congrats! You hacked life!")
 					while(true) {
 						print(InetAddress.getLocalHost().getHostName() + ":~ " + System.getProperty("user.name") + "\$ ")
-						try{Runtime.getRuntime().exec(input.nextLine())} catch(java.lang.IllegalArgumentException e){}
+						try{Runtime.getRuntime().exec(input.nextLine())}
+						catch(java.lang.IllegalArgumentException | java.io.IOException e)
+						{println("Please enter a valid bash command")}
 					}
 				}
 			}
