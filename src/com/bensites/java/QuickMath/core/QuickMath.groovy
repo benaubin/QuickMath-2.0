@@ -3,16 +3,15 @@ package com.bensites.java.QuickMath.core
 import java.util.ArrayList
 import java.lang.Runtime
 
-import com.bensites.java.QuickMath.core.Operators.RegisterCore
 
 class QuickMath {
-	public static OperatorRegistry registry = new OperatorRegistry()
+	public static Parse Parser;
 	public static void main(String[] args) {
 		println "Welcome to QuickMath 2.0!"
-		println "Loading Mods"
-		ModLoader.load(new File("/mods/"))
-		println "Registering operators"
-		RegisterCore.register()
+		//println "Loading Mods"
+		//ModLoader.load(new File("/mods/"))
+		println "Initalizining Parser"
+		Parser = new Parse()
 		if(args.length != 0)
 			run(args)
 		else {
@@ -67,7 +66,6 @@ class QuickMath {
 		println()
 		println()
 		println("The answer is:")
-		Operator operation = registry.getFromString(paramslocal.get(1))
-		print(operation.doOperation(paramslocal))
+		Parse.parse(args)
 	}
 }
