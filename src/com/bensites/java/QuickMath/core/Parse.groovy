@@ -8,7 +8,6 @@ class Parse {
 	}
 	void parse(List<String> expression) {
 		expression.each { String -->
-			
 		}
 		if(expression.contains("("){
 			def openBrackets = []
