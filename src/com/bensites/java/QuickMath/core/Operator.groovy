@@ -6,9 +6,9 @@ class Operator{
 	Operator(String operator, int ArgumentsNeeded){
 		this.operator = operator;
 		argumentsNeeded = ArgumentsNeeded;
-		QuickMath.registry.register(this);
-		
+		QuickMath.Parser.getRegistry().register(this);
 	}
+	
 	final def argumentsNeeded;
 	def operator;
 	
@@ -17,9 +17,6 @@ class Operator{
 	 * @param Arguments of operation (should be formed like "x operator x")
 	 * @return Value when returned.
 	 */
-	public double doOperation(ArrayList<String> args) {
-		doOperation(Double.valueOf(args.get(0)),Double.valueOf(args.get(2)));
-	};
 	
 	double doOperation(double left, double right) throws ClassFormatError{
 		throw(new java.lang.ClassFormatError("This operator ("+ this.getOperator +") is broken"));

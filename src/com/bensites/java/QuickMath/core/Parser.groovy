@@ -1,14 +1,14 @@
 package com.bensites.java.QuickMath.core
 
-class Parse {
-	OperatorRegistry registry
-	Parse(){
-		println "Registering Registry"
-		registry = new OperatorRegistry()
+import com.bensites.java.QuickMath.core.Operators.RegisterCore
+
+class Parser {
+	OperatorRegistry registry = new OperatorRegistry()
+	Parser(){
+		RegisterCore.register()
 	}
-	void parse(List<String> expression) {
-		expression.each { String -->
-		}
+	Expression parse(List<String> expression) {
+		
 		if(expression.contains("("){
 			def openBrackets = []
 			def closeBrackets = []
@@ -17,6 +17,9 @@ class Parse {
 					openBrackets.add(i)
 				if(expression.get(i) == ")")
 					closeBrackets.add(i)
+			}
+			for(i in 0..openBrackets.get(1)) {
+				
 			}
 		}
 		

@@ -5,13 +5,14 @@ import java.lang.Runtime
 
 
 class QuickMath {
-	public static Parse Parser;
+	public static Parser Parser;
 	public static void main(String[] args) {
 		println "Welcome to QuickMath 2.0!"
 		//println "Loading Mods"
 		//ModLoader.load(new File("/mods/"))
 		println "Initalizining Parser"
-		Parser = new Parse()
+		Parser = new Parser()
+		new Expression_(1, Parser.registry.getFromString("*"), 1)
 		if(args.length != 0)
 			run(args)
 		else {
@@ -66,6 +67,6 @@ class QuickMath {
 		println()
 		println()
 		println("The answer is:")
-		Parse.parse(args)
+		Parser.parse(args)
 	}
 }

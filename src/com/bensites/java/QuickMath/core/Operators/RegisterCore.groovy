@@ -5,7 +5,6 @@ public class RegisterCore {
 	public static void register() {
 		new Plus()
 		new Subtract()
-		new Rand()
 		new Multiply()
 		new Divide()
 	}
