@@ -12,6 +12,7 @@ class QuickMath {
 		//ModLoader.load(new File("/mods/"))
 		println "Initalizining Parser"
 		Parser = new Parser()
+		
 		new Expression_(1, Parser.registry.getFromString("*"), 1)
 		if(args.length != 0)
 			run(args)

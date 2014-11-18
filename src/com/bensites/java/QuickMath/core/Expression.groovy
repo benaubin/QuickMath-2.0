@@ -2,7 +2,7 @@ package com.bensites.java.QuickMath.core
 
 class Expression {
 	
-	List<Expression_> Expressions = []
+	def Expressions = []
 	
 	Expression() {
 		
