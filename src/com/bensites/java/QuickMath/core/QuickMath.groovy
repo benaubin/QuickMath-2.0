@@ -9,8 +9,6 @@ class QuickMath {
 	public static OperatorRegistry registry = new OperatorRegistry()
 	public static void main(String[] args) {
 		println "Welcome to QuickMath 2.0!"
-		println "Loading Mods"
-		ModLoader.load(new File("/mods/"))
 		println "Registering operators"
 		RegisterCore.register()
 		if(args.length != 0)
