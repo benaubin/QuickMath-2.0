@@ -8,6 +8,7 @@ public class RegisterCore {
 		new Rand()
 		new Multiply()
 		new Divide()
+		new ppm()
 	}
 
 }
